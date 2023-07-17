@@ -6,26 +6,34 @@ public class beer {
 	//to iterate through our song while decrementing the number of bottles of beer on the wall until we reach 0.
 	public void beerCounter(int numBottles) {
 		int beerCounter = numBottles;
-		
+		String bots = " bottles ";
 		//Loop to output our beer song until there are no bottles of beer left.
 		while (beerCounter >= 0) {
+			
+			//If there is only 1 bottle left, change from plural bottles to singular.
+			if (beerCounter == 1){
+				bots = " bottle ";
+			}			
 			//If there is at least 1 bottle left, sing the song and decrement the beerCounter.
-			if (beerCounter > 1) {
-			System.out.print(beerCounter + " bottles of beer on the wall, " + beerCounter + " bottles of beer... take one down, pass it around, ");
-			beerCounter = beerCounter - 1;
-			System.out.print(beerCounter + " bottles of beer on the wall.");
-			System.out.println();
-			}
-			//If there is only one bottle left, remove the plurals for bottle when necessary.
-			else if(beerCounter == 1) {
-				System.out.print(beerCounter + " bottle of beer on the wall, " + beerCounter + " bottle of beer... take one down, pass it around, ");
+			if (beerCounter >= 1) {
+				System.out.print(beerCounter + bots + "of beer on the wall, " + beerCounter + bots + "of beer... take one down, pass it around, ");
 				beerCounter = beerCounter - 1;
-				System.out.print(beerCounter + " bottles of beer on the wall.");
-				System.out.println();
-			}
-			// If there's no bottles left, 
+				
+				//For this specific case we want it to be singular for correct English.
+				if (beerCounter == 1) {
+					bots = " bottle ";
+				}
+				//For this specific case we want to change to plural to correct our English.
+				if (beerCounter == 0) {
+					bots = " bottles ";
+				}
+				
+				System.out.print(beerCounter + bots + "of beer on the wall.");
+				System.out.println();				
+			}			
+			// If there's no bottles left, let it be known and exit the while loop.
 			else {
-				System.out.println("No more bottles of beer on the wall!!!");
+				System.out.println("No more" + bots + "of beer on the wall!!!");
 				break;
 			}		
 		}
