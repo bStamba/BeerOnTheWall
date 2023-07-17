@@ -9,24 +9,16 @@ public class beer {
 		String bots = " bottles ";
 		//Loop to output our beer song until there are no bottles of beer left.
 		while (beerCounter >= 0) {
-			
-			//If there is only 1 bottle left, change from plural bottles to singular.
-			if (beerCounter == 1){
-				bots = " bottle ";
-			}			
+					
 			//If there is at least 1 bottle left, sing the song and decrement the beerCounter.
 			if (beerCounter >= 1) {
 				System.out.print(beerCounter + bots + "of beer on the wall, " + beerCounter + bots + "of beer... take one down, pass it around, ");
-				beerCounter = beerCounter - 1;
+				beerCounter = beerCounter - 1;				
 				
 				//For this specific case we want it to be singular for correct English.
-				if (beerCounter == 1) {
-					bots = " bottle ";
-				}
-				//For this specific case we want to change to plural to correct our English.
-				if (beerCounter == 0) {
-					bots = " bottles ";
-				}
+				if (beerCounter == 1) {bots = " bottle ";}				
+				//For this specific case we want to change to plural for correct English.
+				if (beerCounter == 0) {bots = " bottles ";}		
 				
 				System.out.print(beerCounter + bots + "of beer on the wall.");
 				System.out.println();				
