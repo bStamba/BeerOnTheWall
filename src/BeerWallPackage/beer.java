@@ -10,10 +10,18 @@ public class beer {
 		//Loop to output our beer song until there are no bottles of beer left.
 		while (beerCounter >= 0) {
 			//If there is at least 1 bottle left, sing the song and decrement the beerCounter.
-			if (beerCounter > 0) {
-			System.out.println(beerCounter + " bottles of beer on the wall, " + beerCounter + " bottles of beer... take one down, pass it around, ");
+			if (beerCounter > 1) {
+			System.out.print(beerCounter + " bottles of beer on the wall, " + beerCounter + " bottles of beer... take one down, pass it around, ");
 			beerCounter = beerCounter - 1;
 			System.out.print(beerCounter + " bottles of beer on the wall.");
+			System.out.println();
+			}
+			//If there is only one bottle left, remove the plurals for bottle when necessary.
+			else if(beerCounter == 1) {
+				System.out.print(beerCounter + " bottle of beer on the wall, " + beerCounter + " bottle of beer... take one down, pass it around, ");
+				beerCounter = beerCounter - 1;
+				System.out.print(beerCounter + " bottles of beer on the wall.");
+				System.out.println();
 			}
 			// If there's no bottles left, 
 			else {
